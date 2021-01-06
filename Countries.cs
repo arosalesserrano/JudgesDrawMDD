@@ -299,7 +299,12 @@ namespace JudgesDrawMDD
             collection.Add(new ISO3166Country("Bulgaria", "BG", "BUL", 100));
             collection.Add(new ISO3166Country("Germany", "DE", "GER", 276));
             collection.Add(new ISO3166Country("Netherlands", "NL", "NED", 528));
-            collection.Add(new ISO3166Country("UEGimnastics", "uu", "UEG", 528));
+            collection.Add(new ISO3166Country("EGimnastics", "uu", "EUG", 528));
+            collection.Add(new ISO3166Country("EGimnastics", "uu", "UEG", 528));
+            collection.Add(new ISO3166Country("Puerto Rico", "PR", "PUR", 630));
+            collection.Add(new ISO3166Country("Denmark", "DK", "DEN", 208));
+            collection.Add(new ISO3166Country("South Africa", "ZA", "RSA", 710));
+            collection.Add(new ISO3166Country("Monaco", "MC", "MON", 492));
 
 
 

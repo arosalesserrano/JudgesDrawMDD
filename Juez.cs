@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LiveCharts;
 using Newtonsoft.Json;
 
 namespace JudgesDrawMDD
@@ -91,12 +92,17 @@ namespace JudgesDrawMDD
 
     public class Jueces : ObservableCollection<Juez>
     {
+        private ChartValues<int> _JuecesN1;
+        private ChartValues<int> _JuecesN2;
+        private ChartValues<int> _JuecesN3;
+        private ChartValues<int> _JuecesN4;
+
         public Jueces() { }
-        
-        public Jueces(string archivo) :base()
+
+        public Jueces(string archivo) : base()
         {
-                basededatos<Juez> bdjueces = new basededatos<Juez>(archivo);
-                bdjueces.Cargar();
+            basededatos<Juez> bdjueces = new basededatos<Juez>(archivo);
+            bdjueces.Cargar();
             foreach (Juez j in bdjueces.valores)
             {
                 Add(j);
@@ -110,18 +116,12 @@ namespace JudgesDrawMDD
         }
         public ObservableCollection<Juez> juecespresentes()
         {
-            /*  Jueces jp;
-              foreach (Juez j in this)
-              {
-                  if (j.Presence.Contains("1"))
-                  jp.Add
-              }
-              */
+
             return new ObservableCollection<Juez>(from item in this where item.Presence select item);
         }
         public ObservableCollection<Juez> juecessinwarning()
         {
-           
+
             return new ObservableCollection<Juez>(from item in this where !item.Warning select item);
         }
 
@@ -137,9 +137,54 @@ namespace JudgesDrawMDD
             return new ObservableCollection<Juez>(from item in this where !item.Warning & item.Presence select item);
         }
 
-    }
 
-    public class Relative: INotifyPropertyChanged
+        public ChartValues<int> JuecesN1
+        {
+            get
+            {
+                _JuecesN1 = new ChartValues<int>();
+                _JuecesN1.Add(this.Where(x => x.Category == 1).Count());
+
+                return _JuecesN1;
+
+            }
+        }
+        public ChartValues<int> JuecesN2
+        {
+            get
+            {
+                _JuecesN2 = new ChartValues<int>();
+
+                _JuecesN2.Add(this.Where(x => x.Category == 2).Count());
+                return _JuecesN2;
+
+            }
+        }
+
+        public ChartValues<int> JuecesN3
+        {
+            get
+            {
+                _JuecesN3 = new ChartValues<int>();
+
+                _JuecesN3.Add(this.Where(x => x.Category == 3).Count());
+                return _JuecesN3;
+
+            }
+        }
+        public ChartValues<int> JuecesN4
+        {
+            get
+            {
+                _JuecesN4 = new ChartValues<int>();
+
+                _JuecesN4.Add(this.Where(x => x.Category == 4).Count());
+                return _JuecesN4;
+
+            }
+        }
+    }
+        public class Relative: INotifyPropertyChanged
     {
         
         private string _Juez;
@@ -252,13 +297,23 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country.ToUpper()).Alpha2 + ".png";
+                if (Country == "EUG" || Country == "UEG")
+                {
+                    return @"Images/uu.png";
+                }
+                else
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country.ToUpper()).Alpha2 + ".png";
+                }
             }
          }
         public int Category { get; set; }
         public int Total { get { return TotalE + TotalA; } }
         public int TotalE { get; set; }
         public int TotalA { get; set; }
+        public int TotalF { get { return TotalFE + TotalFA; } }
+        public int TotalFE { get; set; }
+        public int TotalFA { get; set; }
         public bool Warning
         {
             get
@@ -299,6 +354,28 @@ namespace JudgesDrawMDD
             }
         }
 
+        public void IncrementarparticipacionFA()
+        {
+            TotalFA++;
+        }
+        public void IncrementarparticipacionFE()
+        {
+            TotalFE++;
+        }
+        public void DecrementarparticipacionFA()
+        {
+            if (this.TotalFA > 0)
+            {
+                TotalFA--;
+            }
+        }
+        public void DecrementarparticipacionFE()
+        {
+            if (this.TotalFE > 0)
+            {
+                TotalFE--;
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnChanged(string prop)
         {
@@ -390,8 +467,8 @@ namespace JudgesDrawMDD
         {
             getAll = new Dictionary<int, TipoCompeticion>()
                 {
-                    { 0, new TipoCompeticion { Id = 0, Competicion = "Q"  } },
-                    { 1, new TipoCompeticion { Id = 1, Competicion = "F" } }
+                    { 0, new TipoCompeticion { Id = 0, Competicion = "QUALIFICATION"  } },
+                    { 1, new TipoCompeticion { Id = 1, Competicion = "FINAL" } }
                 };
         }
         /// <summary>
@@ -437,7 +514,7 @@ namespace JudgesDrawMDD
 
                                         { new CategoriaModalidadEjercicio { Id = 10, Categoria = "12-18",Modalidad = "WP",Ejercicio = "BAL",CatModEj = "12-18 WP BAL", CatMod="12-18 WP" } },
                                         { new CategoriaModalidadEjercicio { Id = 11,  Categoria = "12-18",Modalidad = "WP",Ejercicio = "DYN",CatModEj = "12-18 WP DYN", CatMod="12-18 WP" } },
-                                         { new CategoriaModalidadEjercicio { Id = 12,  Categoria = "12-18",Modalidad = "WP",Ejercicio = "COM",CatModEj = "12-18 MP COM", CatMod="12-18 WP" } },
+                                         { new CategoriaModalidadEjercicio { Id = 12,  Categoria = "12-18",Modalidad = "WP",Ejercicio = "COM",CatModEj = "12-18 WP COM", CatMod="12-18 WP" } },
                                         { new CategoriaModalidadEjercicio { Id = 13,  Categoria = "12-18",Modalidad = "MP",Ejercicio = "BAL",CatModEj = "12-18 MP BAL", CatMod="12-18 MP" } },
                                         { new CategoriaModalidadEjercicio { Id = 14, Categoria = "12-18",Modalidad = "MP",Ejercicio = "DYN",CatModEj = "12-18 MP DYN", CatMod="12-18 MP" } },
                                          { new CategoriaModalidadEjercicio { Id = 15, Categoria = "12-18",Modalidad = "MP",Ejercicio = "COM",CatModEj = "12-18 MP COM", CatMod="12-18 MP" } },
@@ -552,24 +629,25 @@ namespace JudgesDrawMDD
                             <ComboBoxItem Content="3 Without finalists"/>
                             <ComboBoxItem Content="3 Randomized based on least amount of sessions judged"/>*/
     {
-        private static Dictionary<int, F3Condition> getAll;
+        private static List<F3Condition> getAll;
         /// <summary>
         /// Initializes static members 
         /// </summary>
         static F3Condition()
         {
-            getAll = new Dictionary<int, F3Condition>()
+            getAll = new List<F3Condition>()
                 {
-                    { 0, new F3Condition { Id = 0, Valor = "Randomized"  } },
-                    { 1, new F3Condition { Id = 1, Valor = "With finalists" } },
-                    { 2, new F3Condition { Id = 1, Valor = "Without finalists" } },
-                    { 3, new F3Condition { Id = 1, Valor = "Randomized based on least amount of sessions judged" } }
+                    { new F3Condition { Id = 0, Valor = "Randomized"  } },
+                    { new F3Condition { Id = 1, Valor = "With finalists" } },
+                    { new F3Condition { Id = 2, Valor = "Without finalists" } },
+                    { new F3Condition { Id = 3, Valor = "Randomized based on least amount of sessions judged" } }
+
                 };
         }
         /// <summary>
         /// Gets the entire list of Judge Categories
         /// </summary>
-        public static Dictionary<int, F3Condition> GetAll
+        public static List<F3Condition> GetAll
         {
             get
             {

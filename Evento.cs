@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
+using System.Reflection;
 namespace JudgesDrawMDD
 {   
     public class EventFinalCountries : ObservableCollection<FinalCountries>
@@ -85,7 +85,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country1.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country1))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country1.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country2
@@ -109,7 +116,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country2.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country2))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country2.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country3
@@ -133,7 +147,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country3.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country3))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country3.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country4
@@ -157,7 +178,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country4.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country4))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country4.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country5
@@ -181,7 +209,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country5.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country5))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country5.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country6
@@ -205,7 +240,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country6.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country6))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country6.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country7
@@ -229,7 +271,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country7.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country7))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country7.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country8
@@ -253,7 +302,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country8.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country8))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country8.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string Country9
@@ -277,7 +333,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country9.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country9))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country9.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -302,7 +365,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country10.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(Country10))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(Country10.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public string CountryR1
@@ -326,7 +396,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(this.CountryR1.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(CountryR1))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(CountryR1.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         } 
         public string CountryR2
@@ -350,7 +427,14 @@ namespace JudgesDrawMDD
         {
             get
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(this.CountryR2.ToUpper()).Alpha2 + ".png";
+                if (!string.IsNullOrEmpty(CountryR2))
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(CountryR2.ToUpper()).Alpha2 + ".png";
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -371,6 +455,7 @@ namespace JudgesDrawMDD
         private string _Event_logo;
         // Panel 1 Clasificaciones
         private string _P1QNoSameCountryInSame;
+        private string _P1QNoLimitCat4Judges;
         private int _P1QEjudges;
         private int _P1QAjudges;
         private int _P1QREjudges;
@@ -380,6 +465,8 @@ namespace JudgesDrawMDD
         //Panel 1 Finales
         private string _P1F3Condition;
         private string _P1FNoSameCountryInSame;
+        private string _P1FReserveContriesToReserveJudges;
+        private string _P1FNoLimitCat4Judges;
         private int _P1FEjudges;
         private int _P1FAjudges;
         private int _P1FREjudges;
@@ -388,6 +475,7 @@ namespace JudgesDrawMDD
         private int _P1FMaxCat4judges;
         // Panel 2 Clasificaciones
         private string _P2QNoSameCountryInSame;
+        private string _P2QNoLimitCat4Judges;
         private int _P2QEjudges;
         private int _P2QAjudges;
         private int _P2QREjudges;
@@ -397,6 +485,8 @@ namespace JudgesDrawMDD
         // Panel 2 Finales
         private string _P2F3Condition;
         private string _P2FNoSameCountryInSame;
+        private string _P2FReserveContriesToReserveJudges;
+        private string _P2FNoLimitCat4Judges;
         private int _P2FEjudges;
         private int _P2FAjudges;
         private int _P2FREjudges;
@@ -765,6 +855,23 @@ namespace JudgesDrawMDD
                 }
             }
         }
+        public string P1QNoLimitCat4Judges
+        {
+            get
+            {
+                return this._P1QNoLimitCat4Judges;
+            }
+
+            set
+            {
+                if (value != this._P1QNoLimitCat4Judges)
+                {
+                    this._P1QNoLimitCat4Judges = value;
+                    OnChanged("P1QNoLimitCat4Judges");
+
+                }
+            }
+        }
         public int P1QEjudges
         {
             get
@@ -922,6 +1029,41 @@ namespace JudgesDrawMDD
                 }
             }
         }
+        
+         public string P1FReserveContriesToReserveJudges
+        {
+            get
+            {
+                return this._P1FReserveContriesToReserveJudges;
+            }
+
+            set
+            {
+                if (value != this._P1FReserveContriesToReserveJudges)
+                {
+                    this._P1FReserveContriesToReserveJudges = value;
+                    OnChanged("P1FReserveContriesToReserveJudges");
+
+                }
+            }
+        }
+        public string P1FNoLimitCat4Judges
+        {
+            get
+            {
+                return this._P1FNoLimitCat4Judges;
+            }
+
+            set
+            {
+                if (value != this._P1FNoLimitCat4Judges)
+                {
+                    this._P1FNoLimitCat4Judges = value;
+                    OnChanged("P1FNoLimitCat4Judges");
+
+                }
+            }
+        }
         public int P1FEjudges
         {
             get
@@ -1038,6 +1180,23 @@ namespace JudgesDrawMDD
                 {
                     this._P2QNoSameCountryInSame = value;
                     OnChanged("P2QNoSameCountryInSame");
+
+                }
+            }
+        }
+        public string P2QNoLimitCat4Judges
+        {
+            get
+            {
+                return this._P2QNoLimitCat4Judges;
+            }
+
+            set
+            {
+                if (value != this._P2QNoLimitCat4Judges)
+                {
+                    this._P2QNoLimitCat4Judges = value;
+                    OnChanged("P2QNoLimitCat4Judges");
 
                 }
             }
@@ -1161,7 +1320,7 @@ namespace JudgesDrawMDD
                 }
             }
         }
-        //Panel 1 Finales
+        //Panel 2 Finales
         public string P2F3Condition
         {
             get
@@ -1192,6 +1351,40 @@ namespace JudgesDrawMDD
                 {
                     this._P2FNoSameCountryInSame = value;
                     OnChanged("P2FNoSameCountryInSame");
+
+                }
+            }
+        }
+        public string P2FReserveContriesToReserveJudges
+        {
+            get
+            {
+                return this._P2FReserveContriesToReserveJudges;
+            }
+
+            set
+            {
+                if (value != this._P2FReserveContriesToReserveJudges)
+                {
+                    this._P2FReserveContriesToReserveJudges = value;
+                    OnChanged("P2FReserveContriesToReserveJudges");
+
+                }
+            }
+        }
+        public string P2FNoLimitCat4Judges
+        {
+            get
+            {
+                return this._P2FNoLimitCat4Judges;
+            }
+
+            set
+            {
+                if (value != this._P2FNoLimitCat4Judges)
+                {
+                    this._P2FNoLimitCat4Judges = value;
+                    OnChanged("P2FNoLimitCat4Judges");
 
                 }
             }

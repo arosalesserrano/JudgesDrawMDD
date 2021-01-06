@@ -82,14 +82,252 @@ namespace JudgesDrawMDD
          private string _CatModExP2 ;
          private string _CompetitionP2 ;
 
-         private int _Relative1P1 ;
-         private int _Relative2P1 ;
-         private int _Relative3P1 ;
-         private int _Relative4P1 ;
-         private int _Relative1P2 ;
-         private int _Relative2P2 ;
-         private int _Relative3P2 ;
-         private int _Relative4P2 ;
+        private int _SettingsP1EJudges;
+        private int _SettingsP1AJudges;
+        private int _SettingsP1REJudges;
+        private int _SettingsP1RAJudges;
+        private int _SettingsP1C4Judges;
+
+        private string _SettingsP1Condition1;
+        private string _SettingsP1Condition2;
+        private string _SettingsP1Condition3;
+        private string _SettingsP1Condition4;
+
+        private int _SettingsP2EJudges;
+        private int _SettingsP2AJudges;
+        private int _SettingsP2REJudges;
+        private int _SettingsP2RAJudges;
+        private int _SettingsP2C4Judges;
+
+        private string _SettingsP2Condition1;
+        private string _SettingsP2Condition2;
+        private string _SettingsP2Condition3;
+        private string _SettingsP2Condition4;
+
+        private int _SettingsTJudges;
+        private int _SettingsLJudges;
+        private int _SettingsIJudges;
+
+        public int SettingsP1EJudges
+        {
+            get
+            {
+                return this._SettingsP1EJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1EJudges)
+                {
+                    this._SettingsP1EJudges = value;
+                    OnChanged("SettingsP1EJudges");
+                }
+            }
+        }
+
+        public int SettingsP1AJudges
+        {
+            get
+            {
+                return this._SettingsP1AJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1AJudges)
+                {
+                    this._SettingsP1AJudges = value;
+                    OnChanged("SettingsP1AJudges");
+                }
+            }
+        }
+
+        public int SettingsP1REJudges
+        {
+            get
+            {
+                return this._SettingsP1REJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1REJudges)
+                {
+                    this._SettingsP1REJudges = value;
+                    OnChanged("SettingsP1REJudges");
+                }
+            }
+        }
+
+        public int SettingsP1RAJudges
+        {
+            get
+            {
+                return this._SettingsP1RAJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1RAJudges)
+                {
+                    this._SettingsP1AJudges = value;
+                    OnChanged("SettingsP1RAJudges");
+                }
+            }
+        }
+
+        public int SettingsP1C4Judges
+        {
+            get
+            {
+                return this._SettingsP1C4Judges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1C4Judges)
+                {
+                    this._SettingsP1C4Judges = value;
+                    OnChanged("SettingsP1C4Judges");
+                }
+            }
+        }
+
+        public int SettingsP2EJudges
+        {
+            get
+            {
+                return this._SettingsP2EJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2EJudges)
+                {
+                    this._SettingsP2EJudges = value;
+                    OnChanged("SettingsP2EJudges");
+                }
+            }
+        }
+
+        public int SettingsP2AJudges
+        {
+            get
+            {
+                return this._SettingsP2AJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2AJudges)
+                {
+                    this._SettingsP2AJudges = value;
+                    OnChanged("SettingsP2AJudges");
+                }
+            }
+        }
+
+        public int SettingsP2REJudges
+        {
+            get
+            {
+                return this._SettingsP2REJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2REJudges)
+                {
+                    this._SettingsP2REJudges = value;
+                    OnChanged("SettingsP2REJudges");
+                }
+            }
+        }
+
+        public int SettingsP2RAJudges
+        {
+            get
+            {
+                return this._SettingsP2RAJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2RAJudges)
+                {
+                    this._SettingsP2AJudges = value;
+                    OnChanged("SettingsP2RAJudges");
+                }
+            }
+        }
+
+        public int SettingsP2C4Judges
+        {
+            get
+            {
+                return this._SettingsP2C4Judges;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2C4Judges)
+                {
+                    this._SettingsP2C4Judges = value;
+                    OnChanged("SettingsP2C4Judges");
+                }
+            }
+        }
+
+        public int SettingsTJudges
+        {
+            get
+            {
+                return this._SettingsTJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsTJudges)
+                {
+                    this._SettingsTJudges = value;
+                    OnChanged("SettingsTJudges");
+                }
+            }
+        }
+
+        public int SettingsLJudges
+        {
+            get
+            {
+                return this._SettingsLJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsLJudges)
+                {
+                    this._SettingsLJudges = value;
+                    OnChanged("SettingsLJudges");
+                }
+            }
+        }
+
+        public int SettingsIJudges
+        {
+            get
+            {
+                return this._SettingsIJudges;
+            }
+
+            set
+            {
+                if (value != this._SettingsIJudges)
+                {
+                    this._SettingsIJudges = value;
+                    OnChanged("SettingsIJudges");
+                }
+            }
+        }
 
         public string SessionDate
         {
@@ -107,6 +345,142 @@ namespace JudgesDrawMDD
                 }
             }
         }
+
+        public string SettingsP1Condition1
+        {
+            get
+            {
+                return this._SettingsP1Condition1;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1Condition1)
+                {
+                    this._SettingsP1Condition1 = value;
+                    OnChanged("SettingsP1Condition1");
+                }
+            }
+        }
+
+        public string SettingsP1Condition2
+        {
+            get
+            {
+                return this._SettingsP1Condition2;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1Condition2)
+                {
+                    this._SettingsP1Condition2 = value;
+                    OnChanged("SettingsP1Condition2");
+                }
+            }
+        }
+
+        public string SettingsP1Condition3
+        {
+            get
+            {
+                return this._SettingsP1Condition3;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1Condition3)
+                {
+                    this._SettingsP1Condition3 = value;
+                    OnChanged("SettingsP1Condition3");
+                }
+            }
+        }
+        public string SettingsP1Condition4
+        {
+            get
+            {
+                return this._SettingsP1Condition4;
+            }
+
+            set
+            {
+                if (value != this._SettingsP1Condition4)
+                {
+                    this._SettingsP1Condition4 = value;
+                    OnChanged("SettingsP1Condition4");
+                }
+            }
+        }
+
+
+        public string SettingsP2Condition1
+        {
+            get
+            {
+                return this._SettingsP2Condition1;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2Condition1)
+                {
+                    this._SettingsP2Condition1 = value;
+                    OnChanged("SettingsP2Condition1");
+                }
+            }
+        }
+
+        public string SettingsP2Condition2
+        {
+            get
+            {
+                return this._SettingsP2Condition2;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2Condition2)
+                {
+                    this._SettingsP2Condition2 = value;
+                    OnChanged("SettingsP2Condition2");
+                }
+            }
+        }
+
+        public string SettingsP2Condition3
+        {
+            get
+            {
+                return this._SettingsP2Condition3;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2Condition3)
+                {
+                    this._SettingsP2Condition3 = value;
+                    OnChanged("SettingsP2Condition3");
+                }
+            }
+        }
+        public string SettingsP2Condition4
+        {
+            get
+            {
+                return this._SettingsP2Condition4;
+            }
+
+            set
+            {
+                if (value != this._SettingsP2Condition4)
+                {
+                    this._SettingsP2Condition4 = value;
+                    OnChanged("SettingsP2Condition4");
+                }
+            }
+        }
+
         public string SessionDay
         {
             get
@@ -761,136 +1135,6 @@ namespace JudgesDrawMDD
                 {
                     this._INQJudge = value;
                     OnChanged("INQJudge");
-                }
-            }
-        }
-
-        public int Relative1P1
-        {
-            get
-            {
-                return this._Relative1P1;
-            }
-
-            set
-            {
-                if (value != this._Relative1P1)
-                {
-                    this._Relative1P1 = value;
-                    OnChanged("Relative1P1");
-                }
-            }
-        }
-        public int Relative2P1
-        {
-            get
-            {
-                return this._Relative2P1;
-            }
-
-            set
-            {
-                if (value != this._Relative2P1)
-                {
-                    this._Relative2P1 = value;
-                    OnChanged("Relative2P1");
-                }
-            }
-        }
-        public int Relative3P1
-        {
-            get
-            {
-                return this._Relative3P1;
-            }
-
-            set
-            {
-                if (value != this._Relative3P1)
-                {
-                    this._Relative3P1 = value;
-                    OnChanged("Relative3P1");
-                }
-            }
-        }
-        public int Relative4P1
-        {
-            get
-            {
-                return this._Relative4P1;
-            }
-
-            set
-            {
-                if (value != this._Relative4P1)
-                {
-                    this._Relative4P1 = value;
-                    OnChanged("Relative4P1");
-                }
-            }
-        }
-
-        public int Relative1P2
-        {
-            get
-            {
-                return this._Relative1P2;
-            }
-
-            set
-            {
-                if (value != this._Relative1P2)
-                {
-                    this._Relative1P2 = value;
-                    OnChanged("Relative1P2");
-                }
-            }
-        }
-        public int Relative2P2
-        {
-            get
-            {
-                return this._Relative2P2;
-            }
-
-            set
-            {
-                if (value != this._Relative2P2)
-                {
-                    this._Relative2P2 = value;
-                    OnChanged("Relative2P2");
-                }
-            }
-        }
-        public int Relative3P2
-        {
-            get
-            {
-                return this._Relative3P2;
-            }
-
-            set
-            {
-                if (value != this._Relative3P2)
-                {
-                    this._Relative3P2 = value;
-                    OnChanged("Relative3P2");
-                }
-            }
-        }
-        public int Relative4P2
-        {
-            get
-            {
-                return this._Relative4P2;
-            }
-
-            set
-            {
-                if (value != this._Relative4P2)
-                {
-                    this._Relative4P2 = value;
-                    OnChanged("Relative4P2");
                 }
             }
         }

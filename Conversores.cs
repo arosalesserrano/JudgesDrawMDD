@@ -12,6 +12,23 @@ using System.Windows.Media;
 
 namespace JudgesDrawMDD
 {
+    
+
+    [ValueConversion(typeof(string), typeof(double))]
+    public class StrToMaxEAHeightConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((string)value == "4") ? 0d : 20d;
+
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {    // Don't need any convert back
+            return null;
+        }
+    }
+
     [ValueConversion(typeof(bool), typeof(double))]
     public class BoolToMaxDJWidthConverter : IValueConverter
     {
@@ -36,11 +53,19 @@ namespace JudgesDrawMDD
            
             if (!string.IsNullOrEmpty(input))
             {
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(input).Alpha2 + ".png";
+                if (input=="EUG" || input == "UEG")
+                {
+                    return @"Images/uu.png";
+                }
+                else
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(input).Alpha2 + ".png";
+
+                }
             }
             else
             {
-                return null;
+                return @"/FamFamFam.Flags.Wpf;component/Images/xx.png"; 
             }
         }
 
@@ -63,7 +88,14 @@ namespace JudgesDrawMDD
             if (lj.Count > 0)
             {
                 j = lj[0];
-                return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(j.Country.ToUpper()).Alpha2 + ".png";
+                if (j.Country.ToUpper() == "EUG" || j.Country.ToUpper() == "UEG")
+                {
+                    return @"Images/uu.png";
+                }
+                else
+                {
+                    return @"/FamFamFam.Flags.Wpf;component/Images/" + ISO3166.FromAlpha3(j.Country.ToUpper()).Alpha2 + ".png";
+                }
             }
             else
             {
@@ -199,6 +231,480 @@ namespace JudgesDrawMDD
             {
                 return Brushes.Brown;
             }
+            if (input == MainWindow.evento.WP1116BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1116BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1116DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1116DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1218BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1218BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1218DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1218DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1218COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1218COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1319BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1319BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1319DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1319DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1319COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WP1319COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WPSENBALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WPSENBALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WPSENDYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WPSENDYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WPSENCOMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WPSENCOMD2)
+            {
+                return Brushes.Blue;
+            }
+
+            if (input == MainWindow.evento.MP1116BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1116BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1116DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1116DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1218BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1218BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1218DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1218DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1218COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1218COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1319BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1319BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1319DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1319DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1319COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MP1319COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MPSENBALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MPSENBALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MPSENDYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MPSENDYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MPSENCOMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MPSENCOMD2)
+            {
+                return Brushes.Blue;
+            }
+
+            if (input == MainWindow.evento.MXP1116BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1116BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1116DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1116DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1218BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1218BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1218DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1218DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1218COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1218COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1319BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1319BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1319DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1319DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1319COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXP1319COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXPSENBALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXPSENBALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXPSENDYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXPSENDYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXPSENCOMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MXPSENCOMD2)
+            {
+                return Brushes.Blue;
+            }
+
+            if (input == MainWindow.evento.WG1116BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1116BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1116DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1116DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1218BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1218BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1218DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1218DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1218COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1218COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1319BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1319BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1319DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1319DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1319COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WG1319COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WGSENBALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WGSENBALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WGSENDYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WGSENDYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WGSENCOMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.WGSENCOMD2)
+            {
+                return Brushes.Blue;
+            }
+
+            if (input == MainWindow.evento.MG1116BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1116BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1116DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1116DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1218BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1218BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1218DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1218DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1218COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1218COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1319BALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1319BALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1319DYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1319DYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1319COMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MG1319COMD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MGSENBALD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MGSENBALD2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MGSENDYND1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MGSENDYND2)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MGSENCOMD1)
+            {
+                return Brushes.Blue;
+            }
+            if (input == MainWindow.evento.MGSENCOMD2)
+            {
+                return Brushes.Blue;
+            }
+            /*CBWP1116BALD1.ItemsSource = juecesd;
+            CBWP1116BALD2.ItemsSource = juecesd;
+            CBWP1116DYND1.ItemsSource = juecesd;
+            CBWP1116DYND2.ItemsSource = juecesd;
+            CBWP1218BALD1.ItemsSource = juecesd;
+            CBWP1218BALD2.ItemsSource = juecesd;
+            CBWP1218DYND1.ItemsSource = juecesd;
+            CBWP1218DYND2.ItemsSource = juecesd;
+            CBWP1218COMD1.ItemsSource = juecesd;
+            CBWP1218COMD2.ItemsSource = juecesd;
+            CBWP1319BALD1.ItemsSource = juecesd;
+            CBWP1319BALD2.ItemsSource = juecesd;
+            CBWP1319DYND1.ItemsSource = juecesd;
+            CBWP1319DYND2.ItemsSource = juecesd;
+            CBWP1319COMD2.ItemsSource = juecesd;
+            CBWP1319COMD1.ItemsSource = juecesd;
+
+            CBWPSENBALD1.ItemsSource = juecesd;
+            CBWPSENBALD2.ItemsSource = juecesd;
+            CBWPSENDYND1.ItemsSource = juecesd;
+            CBWPSENDYND2.ItemsSource = juecesd;
+            CBWPSENCOMD2.ItemsSource = juecesd;
+            CBWPSENCOMD1.ItemsSource = juecesd;
+
+            CBWPSENBALD1.ItemsSource = juecesd;
+            CBWPSENBALD2.ItemsSource = juecesd;
+            CBWPSENDYND1.ItemsSource = juecesd;
+            CBWPSENDYND2.ItemsSource = juecesd;
+            CBWPSENCOMD1.ItemsSource = juecesd;
+            CBWPSENCOMD2.ItemsSource = juecesd;*/
             return DependencyProperty.UnsetValue;
 
         }
